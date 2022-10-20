@@ -18,7 +18,7 @@ If you find this repo useful for your research, please consider citing our paper
 ```bibtex
 @incollection{Reisenbuechler2022,
   author = {Daniel Reisenbüchler and Sophia J. Wagner and Melanie Boxberg and Tingying Peng},
-  title = {Local Attention Graph-Based Transformer for~Multi-target Genetic Alteration Prediction},
+  title = {Local Attention Graph-Based Transformer for Multi-target Genetic Alteration Prediction},
   doi = {10.1007/978-3-031-16434-7_37},
   url = {https://doi.org/10.1007/978-3-031-16434-7_37},
   year = {2022},
