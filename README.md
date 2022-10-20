@@ -7,6 +7,11 @@ Implementation of LA_MIL in PyTorch.
 
 
 
+## Local attention - Change the neighborhoods
+<img src="./local_neighborhoods_vis.gif" />
+
+You can change the neighborhood size according to your particular task as an user-specified inductive bias.
+
 
 
 ## Visualisation of Attention and latent space 
@@ -16,7 +21,7 @@ Implementation of LA_MIL in PyTorch.
 You can visualise attentive regions and also catch the embedding, which is the output of the mean pooling operation. 
 
 
-Pip package and code follow asap. 
+Pip package and code follow asap. Stay tuned
 
 
 
