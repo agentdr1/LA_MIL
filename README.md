@@ -8,6 +8,10 @@ Implementation of LA_MIL in PyTorch.
 **Pip package and code follow asap. Stay tuned**
 
 
+## Installation
+
+## Data preprocessing: Tesselation and Feature Extraction
+
 
 ## Local attention - Change the neighborhoods
 <img src="./local_neighborhoods_vis.gif" />
