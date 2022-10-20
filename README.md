@@ -1,4 +1,4 @@
-<img src="./la_mil.png" width="700px"></img>
+<img src="./pngs/la_mil.png" width="700px"></img>
 
 
 ## Local Attention Multiple Instance Learning - PyTorch
@@ -14,7 +14,7 @@ Implementation of LA_MIL in PyTorch.
 
 
 ## Local attention - Change the neighborhoods
-<img src="./local_neighborhoods_vis.gif" />
+<img src="./pngs/local_neighborhoods_vis.gif" />
 
 You can change the neighborhood size according to your particular task as an user-specified inductive bias.
 
@@ -22,7 +22,7 @@ You can change the neighborhood size according to your particular task as an use
 
 ## Visualisation of Attention and latent space 
 
-<img src="./attention_and_embedding_vis.png" width="500x"></img>
+<img src="./pngs/attention_and_embedding_vis.png" width="500x"></img>
 
 You can visualise attentive regions and also catch the embedding, which is the output of the mean pooling operation. 
 
