@@ -16,7 +16,7 @@ Code follows asap.
 
 If you find this repo useful for your research, please consider citing our paper:
 ```bibtex
-@incollection{Reisenbchler2022,
+@incollection{Reisenbuechler2022,
   author = {Daniel Reisenbüchler and Sophia J. Wagner and Melanie Boxberg and Tingying Peng},
   title = {Local Attention Graph-Based Transformer for~Multi-target Genetic Alteration Prediction},
   doi = {10.1007/978-3-031-16434-7_37},
