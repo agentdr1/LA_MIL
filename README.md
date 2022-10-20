@@ -5,6 +5,8 @@
 
 Implementation of LA_MIL in PyTorch.
 
+**Pip package and code follow asap. Stay tuned**
+
 
 
 ## Local attention - Change the neighborhoods
@@ -21,7 +23,6 @@ You can change the neighborhood size according to your particular task as an use
 You can visualise attentive regions and also catch the embedding, which is the output of the mean pooling operation. 
 
 
-Pip package and code follow asap. Stay tuned
 
 
 
