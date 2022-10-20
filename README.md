@@ -1,5 +1,5 @@
 <p align="center">
-**Local Attention Multiple Instance Learning**
+## Local Attention Multiple Instance Learning - PyTorch
 </p>
 
 
@@ -7,9 +7,15 @@
 <img src="./la_mil.png" width="600px"></img>
 </p>
 
+Implementation of LA_MIL in PyTorch.
+
 
 Code follows asap. 
 
+
+
+
+## Citations
 
 If you find this repo useful for your research, please consider citing our paper:
 ```bibtex
