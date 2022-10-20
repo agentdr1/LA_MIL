@@ -1,0 +1,26 @@
+<p align="center">
+**Local Attention Multiple Instance Learning**
+</p>
+
+
+<p align="center">
+<img src="./la_mil.png" width="600px"></img>
+</p>
+
+
+Code follows asap. 
+
+
+If you find this repo useful for your research, please consider citing our paper:
+```bibtex
+@incollection{Reisenbchler2022,
+  author = {Daniel Reisenbüchler and Sophia J. Wagner and Melanie Boxberg and Tingying Peng},
+  title = {Local Attention Graph-Based Transformer for~Multi-target Genetic Alteration Prediction},
+  doi = {10.1007/978-3-031-16434-7_37},
+  url = {https://doi.org/10.1007/978-3-031-16434-7_37},
+  year = {2022},
+  publisher = {Springer Nature Switzerland},
+  pages = {377--386},
+  booktitle = {Lecture Notes in Computer Science}
+}
+```
