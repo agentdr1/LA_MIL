@@ -6,7 +6,7 @@
 Implementation of LA_MIL in PyTorch.
 
 
-Code follows asap. 
+Pip package and code follow asap. 
 
 
 
