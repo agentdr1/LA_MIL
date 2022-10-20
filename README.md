@@ -6,6 +6,16 @@
 Implementation of LA_MIL in PyTorch.
 
 
+
+
+
+## Visualisation of Attention and latent space 
+
+<img src="./attention_and_embedding_vis.png" width="500x"></img>
+
+You can visualise attentive regions and also catch the embedding, which is the output of the mean pooling operation. 
+
+
 Pip package and code follow asap. 
 
 
