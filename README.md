@@ -1,6 +1,5 @@
-<p align="center">
-<img src="./la_mil.png" width="600px"></img>
-</p>
+<img src="./la_mil.png" width="700px"></img>
+
 
 ## Local Attention Multiple Instance Learning - PyTorch
 
