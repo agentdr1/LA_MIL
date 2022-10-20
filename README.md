@@ -1,7 +1,7 @@
 <img src="./pngs/la_mil.png" width="700px"></img>
 
 ## Updated Results
-Using RetCCL as feature extraction network and changing the first fully connected layer from 1024->512 to 2048->512, LA_MIL achieves dramatic performance boosts in 5-Fold CV on TCGA Colorectal Cancer, Stomach cancer. Results given as mean AUROC and variance across folds. 
+Using RetCCL as feature extraction network and changing the first fully connected layer from 1024->512 to 2048->512, LA_MIL achieves dramatic performance boosts in 5-Fold CV on TCGA Colorectal and Stomach Cancer. Results given as mean AUROC and variance across folds. 
 
 |   Multi-target    |     MSI     |     TMB     |     BRAF    |     ALK     |    ERBB4    |    FBXW7    |     KRAS    |    PIK3CA   |    SMAD4    |     TP53    |
 |:-----------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -9,6 +9,9 @@ Using RetCCL as feature extraction network and changing the first fully connecte
 | TCGA-STAD (n=440) | 0.83 (0.07) | 0.82 (0.06) | 0.66 (0.05) | 0.59 (0.05) | 0.59 (0.08) | 0.75 (0.17) | 0.66 (0.22) | 0.66 (0.14) | 0.65 (0.08) | 0.53 (0.08) |
 
 We further extend our results in an external validation on CPTAC COAD:
+|  Multi-target   |  MSI |  TMB |
+|:---------------:|:----:|:----:|
+| CPTAC-COAD (n=) | 0.83 | 0.81 |
 
 
 
