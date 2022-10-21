@@ -27,6 +27,8 @@ Implementation of LA_MIL in PyTorch.
 
 ## Data preprocessing: Tesselation and Feature Extraction
 
+## Usage
+
 
 ## Local attention - Change the neighborhoods
 <img src="./pngs/local_neighborhoods_vis.gif" />
