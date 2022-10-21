@@ -24,6 +24,9 @@ Implementation of LA_MIL in PyTorch.
 
 
 ## Installation
+```bash
+$ pip install 
+```
 
 ## Data preprocessing: Tesselation and Feature Extraction
 
@@ -34,6 +37,8 @@ Implementation of LA_MIL in PyTorch.
 <img src="./pngs/local_neighborhoods_vis.gif" />
 
 You can change the neighborhood size according to your particular task as an user-specified inductive bias.
+
+However, depending on your GPU capabilities and what you want to investigate in whole slide images, you can also use <a href="https://arxiv.org/pdf/1706.03762">global self-attention</a>. In this case we have the classical all-to-all attention mechanism:
 
 
 
