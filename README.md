@@ -11,7 +11,7 @@ Using as feature extraction network and changing the first fully connected layer
 We further extend our results in an external validation on CPTAC COAD:
 |  Multi-target   |  MSI |  TMB |
 |:---------------:|:----:|:----:|
-| CPTAC-COAD (n=) | 0.83 | 0.81 |
+| CPTAC-COAD (n=357) | 0.83 | 0.81 |
 
 
 
