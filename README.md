@@ -8,7 +8,7 @@ Using as feature extraction network and changing the first fully connected layer
 |  TCGA-CRC (n=594) | 0.91 (0.03) | 0.87 (0.08) | 0.79 (0.08) | 0.67 (0.11) | 0.68 (0.12) | 0.69 (0.12) | 0.62 (0.08) | 0.60 (0.07) | 0.61 (0.03) | 0.70 (0.05) |
 | TCGA-STAD (n=440) | 0.83 (0.07) | 0.82 (0.06) | 0.66 (0.05) | 0.59 (0.05) | 0.59 (0.08) | 0.75 (0.17) | 0.66 (0.22) | 0.66 (0.14) | 0.65 (0.08) | 0.53 (0.08) |
 
-We further extend our results in an external validation on CPTAC COAD:
+We further extend our results in an external validation on CPTAC COAD, scores given as mean AUROC:
 |  Multi-target   |  MSI |  TMB |
 |:---------------:|:----:|:----:|
 | CPTAC-COAD (n=357) | 0.83 | 0.81 |
