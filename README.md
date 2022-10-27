@@ -25,7 +25,7 @@ Implementation of LA_MIL in PyTorch.
 
 ## Installation
 ```bash
-$ pip install 
+$ pip install tmil
 ```
 
 ## Data preprocessing: Tesselation and Feature Extraction
