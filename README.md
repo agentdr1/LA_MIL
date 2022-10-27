@@ -20,7 +20,6 @@ We further extend our results in an external validation on CPTAC COAD, scores gi
 
 Implementation of LA_MIL in PyTorch.
 
-**Pip package and code follow asap. Stay tuned**
 
 
 ## Installation
@@ -32,7 +31,34 @@ $ pip install tmil
 Whole slide image tesselation can for example be performed in parallel using <a href="https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py">Coudray's code</a> and for feature extraction we used <a href="https://kimialab.uwaterloo.ca/kimia/index.php/data-and-code-2/kimia-net/">KimiaNet</a> and refer to their work for more information. 
 
 ## Usage
+```python
+import torch, dgl, random
+from tmil import TMIL
+#data
+batch_size = 1
+num_tiles = 1000 
+tile_dim = 1024 #or feature dimension, dependent on feature extractor
+num_classes = 4
+tile_coords = torch.tensor([(random.random(), random.random()) for _ in range(num_tiles)])
+knn1, knn2, knn3 = 16, 64, 128 #adapt to your task 
+g1, g2, g3 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2), dgl.knn_graph(tile_coords, knn3)
+wsi = torch.randn(batch_size, num_tiles, tile_dim)
 
+#model 
+m1 = TMIL(
+    n_classes=num_classes,
+    architecture='LA_MIL',
+    feat_dim=tile_dim,
+    latent_dim=512,
+    num_heads=8,
+    depth=4
+)
+
+logits, emb, att1 = m1(wsi, graphs=[g1, g2, g3], return_last_att=True, return_emb=True) 
+
+#Multi Target (e.g, predict if multiple mutations are present: TP53 True, BRAF True, MSI False, TMB True <-> [1, 1, 0, 1]
+multi_target_binaries = torch.where(torch.sigmoid(logits) > 0.5, 1., 0.) 
+```
 
 ## Local attention - Change the neighborhoods
 <img src="./pngs/local_neighborhoods_vis.gif" />
