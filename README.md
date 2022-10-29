@@ -3,7 +3,9 @@
 
 ## Local Attention Multiple Instance Learning - PyTorch
 
-Implementation of LA_MIL in PyTorch.
+Implementation Transformer architectures for Multiple Instance Learning (MIL) in PyTorch.
+Currently we have implemented a Graph Transformer for local attention ('LA_MIL') and a 
+vanilla Transformer using global self attention ('GA_MIL'). 
 
 
 
@@ -20,26 +22,26 @@ Whole slide image tesselation can for example be performed in parallel using <a 
 import torch, dgl, random
 from tmil import TMIL
 #data
-batch_size = 1
-num_tiles = 1000 
+batch_size = 1 #num of WSIs=1
+num_tiles = 1000 #num of used tiles from WSI
 tile_dim = 1024 #or feature dimension, dependent on feature extractor
-num_classes = 4
-tile_coords = torch.tensor([(random.random(), random.random()) for _ in range(num_tiles)])
-knn1, knn2, knn3 = 16, 64, 128 #adapt to your task 
-g1, g2, g3 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2), dgl.knn_graph(tile_coords, knn3)
-wsi = torch.randn(batch_size, num_tiles, tile_dim)
+num_classes = 4 #num of targets to predict
+tile_coords = torch.tensor([(random.random(), random.random()) for _ in range(num_tiles)]) #tile coordinates from WSI
+knn1, knn2, knn3 = 16, 64 #adapt to your task 
+g1, g2, g3 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2) #graphs
+wsi = torch.randn(batch_size, num_tiles, tile_dim) # [1,n,l]
 
 #model 
-m1 = TMIL(
+m = TMIL(
     n_classes=num_classes,
     architecture='LA_MIL',
     feat_dim=tile_dim,
     latent_dim=512,
     num_heads=8,
-    depth=4
+    depth=2
 )
 
-logits, emb, att1 = m1(wsi, graphs=[g1, g2, g3], return_last_att=True, return_emb=True) 
+logits = m(wsi, graphs=[g1, g2]) 
 
 #Multi Target (e.g, predict if multiple mutations are present: TP53 True, BRAF True, MSI False, TMB True <-> [1, 1, 0, 1]
 multi_target_binaries = torch.where(torch.sigmoid(logits) > 0.5, 1., 0.) 
@@ -49,16 +51,67 @@ multi_target_binaries = torch.where(torch.sigmoid(logits) > 0.5, 1., 0.)
 <img src="./pngs/local_neighborhoods_vis.gif" />
 
 You can change the neighborhood size according to your particular task as an user-specified inductive bias.
+```python
+knn1, knn2, knn3 = 16, 64, 128 #adapt to your task 
+g1, g2, g3 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2), dgl.knn_graph(tile_coords, knn3)
+wsi = torch.randn(batch_size, num_tiles, tile_dim)
 
-However, depending on your GPU capabilities and what you want to investigate in whole slide images, you can also use <a href="https://arxiv.org/pdf/1706.03762">global self-attention</a>. In this case we have the classical all-to-all attention mechanism:
+#model 
+m = TMIL(
+    n_classes=num_classes,
+    architecture='LA_MIL',
+    feat_dim=tile_dim,
+    latent_dim=512,
+    num_heads=8,
+    depth=4 #if depth>num_graphs, the last graph will be repeated for remaining layers
+)
+
+logits = m(wsi, graphs=[g1, g2, g3]) 
+```
 
 
+However, depending on your GPU capabilities and what you want to investigate in whole slide images, you can also use <a href="https://arxiv.org/pdf/1706.03762">global self-attention</a>. In this case we have the classical all-to-all attention mechanism,
+you can change the architecture parameter to 'GA_MIL':
+
+```python
+wsi = torch.randn(batch_size, num_tiles, tile_dim)
+
+#model 
+m = TMIL(
+    n_classes=num_classes,
+    architecture='GA_MIL', 
+    feat_dim=tile_dim,
+    latent_dim=512,
+    num_heads=8,
+    depth=2 
+
+logits = m(wsi) 
+```
 
 ## Visualisation of Attention and latent space 
 
 <img src="./pngs/attention_and_embedding_vis.png" width="500x"></img>
 
 You can visualise attentive regions and also catch the embedding, which is the output of the mean pooling operation. 
+
+```python
+wsi = torch.randn(batch_size, num_tiles, tile_dim)
+
+#model 
+m = TMIL(
+    n_classes=num_classes,
+    architecture='GA_MIL', 
+    feat_dim=tile_dim,
+    latent_dim=512,
+    num_heads=8,
+    depth=4 
+)
+
+logits, emb, att = m(wsi, return_last_att=True, return_emb=True) 
+
+emb, att #[1,latent_dim], [num_tiles]
+
+```
 
 
 ## Updated Results
