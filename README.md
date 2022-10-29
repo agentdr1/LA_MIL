@@ -20,7 +20,7 @@ Whole slide image tesselation can for example be performed in parallel using <a 
 ## Usage
 ```python
 import torch, dgl, random
-from tmil import TMIL
+from tmil import T_MIL
 #data
 batch_size = 1 #num of WSIs=1
 num_tiles = 1000 #num of used tiles from WSI
@@ -32,7 +32,7 @@ g1, g2, g3 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2) 
 wsi = torch.randn(batch_size, num_tiles, tile_dim) 
 
 #model 
-m = TMIL(
+m = T_MIL(
     n_classes=num_classes,
     architecture='LA_MIL',
     feat_dim=tile_dim,
@@ -57,7 +57,7 @@ g1, g2, g3 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2),
 wsi = torch.randn(batch_size, num_tiles, tile_dim)
 
 #model 
-m = TMIL(
+m = T_MIL(
     n_classes=num_classes,
     architecture='LA_MIL',
     feat_dim=tile_dim,
@@ -77,7 +77,7 @@ you can change the architecture parameter to 'GA_MIL':
 wsi = torch.randn(batch_size, num_tiles, tile_dim)
 
 #model 
-m = TMIL(
+m = T_MIL(
     n_classes=num_classes,
     architecture='GA_MIL', 
     feat_dim=tile_dim,
@@ -98,7 +98,7 @@ You can visualise attentive regions and also catch the embedding, which is the o
 wsi = torch.randn(batch_size, num_tiles, tile_dim)
 
 #model 
-m = TMIL(
+m = T_MIL(
     n_classes=num_classes,
     architecture='GA_MIL', 
     feat_dim=tile_dim,
