@@ -86,6 +86,7 @@ m = T_MIL(
     latent_dim=512,
     num_heads=8,
     depth=2 
+)
 
 logits = m(wsi) 
 ```
