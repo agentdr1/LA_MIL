@@ -29,8 +29,8 @@ num_tiles = 1000 #num of used tiles from WSI
 tile_dim = 1024 #or feature dimension, dependent on feature extractor
 num_classes = 4 #num of targets to predict
 tile_coords = torch.tensor([(random.random(), random.random()) for _ in range(num_tiles)]) #tile coordinates from WSI
-knn1, knn2, knn3 = 16, 64 #adapt to your task 
-g1, g2, g3 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2) #graphs
+knn1, knn2 = 16, 64 #adapt to your task 
+g1, g2 = dgl.knn_graph(tile_coords, knn1), dgl.knn_graph(tile_coords, knn2) #graphs
 wsi = torch.randn(batch_size, num_tiles, tile_dim) 
 
 #model 
