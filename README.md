@@ -16,6 +16,7 @@ $ pip install tmil
 
 ## Data preprocessing: Tesselation and Feature Extraction
 Whole slide image tesselation can for example be performed in parallel using <a href="https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py">Coudray's code</a> and for feature extraction we used <a href="https://kimialab.uwaterloo.ca/kimia/index.php/data-and-code-2/kimia-net/">KimiaNet</a> and refer to their work for more information. 
+**UPDATE**: We strongly recommend self-supervised pretrained feature extractors like <a href="https://github.com/Xiyue-Wang/RetCCL">RetCCL</a> and <a href="https://github.com/Xiyue-Wang/TransPath">TransPath</a> to obtain SOTA results in WSI analysis. Check our updated results with RetCCL at the bottom. A large scale study from my colleague evaluating GA_MIL equipped with TransPath is in preparation. Stay tuned!
 
 ## Usage
 ```python
@@ -118,7 +119,7 @@ emb, att #[1,latent_dim], [num_tiles]
 
 
 ## Updated Results
-Using as feature extraction network and changing the first fully connected layer from 1024->512 to, LA_MIL achieves dramatic performance boosts in 5-Fold CV on TCGA Colorectal and Stomach Cancer. Results given as mean AUROC and variance across folds. 
+Using <a href="https://github.com/Xiyue-Wang/RetCCL">RetCCL</a> as feature extraction network and changing the first fully connected layer from 1024->512 to 2048->512, LA_MIL achieves dramatic performance boosts in 5-Fold CV on TCGA Colorectal and Stomach Cancer. Results given as mean AUROC and variance across folds. 
 
 |   Multi-target    |     MSI     |     TMB     |     BRAF    |     ALK     |    ERBB4    |    FBXW7    |     KRAS    |    PIK3CA   |    SMAD4    |     TP53    |
 |:-----------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
