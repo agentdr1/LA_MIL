@@ -1,9 +1,9 @@
 <img src="./pngs/pipeline.png" width="700px"></img>
 
 
-## Local Attention Multiple Instance Learning - PyTorch
+## Transformer based Multiple Instance Learning - PyTorch
 
-Implementation Transformer architectures for Multiple Instance Learning (MIL) in PyTorch.
+Implementation of Transformer architectures for Multiple Instance Learning (MIL) in PyTorch.
 Currently we have implemented a Graph Transformer for local attention ('LA_MIL') and a 
 vanilla Transformer using global self attention ('GA_MIL'). 
 
