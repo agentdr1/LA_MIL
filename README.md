@@ -5,12 +5,9 @@ Preprint of large scale study in CRC cancer using GA-MIL equipped with a pretrai
 For processing complete WSI using Transformers and self-supervised pretrained feature extractors, attention visualisation plots and more, check out: <a href="https://github.com/peng-lab/HistoBistro">HistoBistro</a>
 
 
-
+## Transformer based Multiple Instance Learning - PyTorch
 
 <img src="./pngs/pipeline.png" width="700px"></img>
-
-
-## Transformer based Multiple Instance Learning - PyTorch
 
 Implementation of Transformer architectures for Multiple Instance Learning (MIL) in PyTorch.
 Currently we have implemented a Graph Transformer for local attention ('LA_MIL') and a 
