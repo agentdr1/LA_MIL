@@ -7,6 +7,11 @@ Implementation of Transformer architectures for Multiple Instance Learning (MIL)
 Currently we have implemented a Graph Transformer for local attention ('LA_MIL') and a 
 vanilla Transformer using global self attention ('GA_MIL'). 
 
+## 🚀🚀🚀 News
+
+Preprint of large scale study in CRC cancer using GA-MIL equipped with a pretrained Swin-Transformer is now available: <a href="https://arxiv.org/abs/2301.09617">Fully transformer-based biomarker prediction from colorectal cancer histology: a large-scale multicentric study</a>
+
+For processing complete WSI using Transformers and self-supervised pretrained feature extractors, attention visualisation plots and more, check out: <a href="https://github.com/peng-lab/HistoBistro">HistoBistro</a>
 
 
 ## Installation
@@ -16,7 +21,7 @@ $ pip install tmil
 
 ## Data preprocessing: Tesselation and Feature Extraction
 Whole slide image tesselation can for example be performed in parallel using <a href="https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py">Coudray's code</a> and for feature extraction we used <a href="https://kimialab.uwaterloo.ca/kimia/index.php/data-and-code-2/kimia-net/">KimiaNet</a> and refer to their work for more information. 
-**UPDATE**: We strongly recommend self-supervised pretrained feature extractors like <a href="https://github.com/Xiyue-Wang/RetCCL">RetCCL</a> and <a href="https://github.com/Xiyue-Wang/TransPath">TransPath</a> to obtain SOTA results in WSI analysis. Check our updated results with RetCCL at the bottom. A large scale study from my colleague evaluating GA_MIL equipped with TransPath is in preparation. Stay tuned!
+**UPDATE**: We strongly recommend self-supervised pretrained feature extractors like <a href="https://github.com/Xiyue-Wang/RetCCL">RetCCL</a> and <a href="https://github.com/Xiyue-Wang/TransPath">TransPath</a> to obtain SOTA results in WSI analysis. 
 
 ## Usage
 ```python
