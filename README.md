@@ -7,6 +7,7 @@ Implementation of Transformer architectures for Multiple Instance Learning (MIL)
 Currently we have implemented a Graph Transformer for local attention ('LA_MIL') and a 
 vanilla Transformer using global self attention ('GA_MIL'). 
 
+
 ## 🚀🚀🚀 News
 
 Preprint of large scale study in CRC cancer using GA-MIL equipped with a pretrained Swin-Transformer is now available: <a href="https://arxiv.org/abs/2301.09617">Fully transformer-based biomarker prediction from colorectal cancer histology: a large-scale multicentric study</a>
