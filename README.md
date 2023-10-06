@@ -1,6 +1,6 @@
 ## 🚀🚀🚀 News
 
-Preprint of large scale study in CRC cancer using GA-MIL equipped with a pretrained Swin-Transformer is now available: <a href="https://arxiv.org/abs/2301.09617">Fully transformer-based biomarker prediction from colorectal cancer histology: a large-scale multicentric study</a>
+Preprint of large scale study in CRC cancer using GA-MIL equipped with a pretrained Swin-Transformer is now available (accepted in Cancer Cell): <a href="https://arxiv.org/abs/2301.09617">Fully transformer-based biomarker prediction from colorectal cancer histology: a large-scale multicentric study</a>
 
 For processing complete WSI using Transformers and self-supervised pretrained feature extractors, attention visualisation plots and more, check out: <a href="https://github.com/peng-lab/HistoBistro">HistoBistro</a>
 
