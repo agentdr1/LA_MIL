@@ -26,7 +26,7 @@ Whole slide image tesselation can for example be performed in parallel using <a 
 ## Usage
 ```python
 import torch, dgl, random
-from tmil import T_MIL
+from tmil import TMIL as T_MIL
 
 
 #data
